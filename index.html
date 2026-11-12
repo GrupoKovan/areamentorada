@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Área da mentorada · Grupo Kovan</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="logo-kovan.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF8F3;--card:#FFFFFF;--line:#EADFD3;--line2:#D9C8B6;--ink:#232323;--soft:#4F4741;--mute:#6B625B;--cobre:#8B4A2B;--cobre2:#6E3A20;--bege:#F3E9DE;--caramelo:#C9A27E;--erro:#A32D2D;--ok:#2E6B3F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.5}
+h1,h2,h3,.mont{font-family:Montserrat,sans-serif;margin:0}
+a{color:var(--cobre)}
+.hex{clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+header.top{background:var(--bg);border-bottom:1px solid var(--line)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.topbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.logo{display:block;width:180px;height:46px;overflow:hidden}
+.logo img{display:block;width:180px;height:180px;margin-top:-65px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;border:0;font:inherit;font-weight:600;cursor:pointer;text-decoration:none}
+.btn-escuro{background:var(--ink);color:#fff}.btn-cobre{background:var(--cobre);color:#fff}
+.btn-linha{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.btn-texto{background:transparent;color:var(--cobre);padding:0 6px;min-height:36px}
+.btn-pq{min-height:36px;padding:0 14px;font-size:14px}
+.btn:disabled{opacity:.6;cursor:default}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600}
+input,select,textarea{font:inherit;font-size:15px;font-weight:400;color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:12px;padding:10px 12px;min-height:44px;width:100%}
+textarea{min-height:90px;resize:vertical}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.pilha{display:flex;flex-direction:column;gap:12px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cobre)}
+.muted{color:var(--mute);font-size:14px}
+.erro{color:var(--erro);font-size:13px;min-height:18px;margin:0}
+.ok{color:var(--ok);font-size:13px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0}
+.tab{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line2);background:#fff;font:inherit;font-weight:600;font-size:14px;cursor:pointer;color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.layout{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start;padding:24px 0 60px}
+.lateral{flex:1 1 260px;min-width:0}
+.principal{flex:999 1 560px;min-width:0}
+.item{display:flex;flex-direction:column;gap:2px;width:100%;text-align:left;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:#fff;cursor:pointer;font:inherit;color:var(--ink)}
+.item[aria-current="true"]{border-color:var(--cobre);box-shadow:0 0 0 2px var(--cobre) inset}
+.pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:600;background:var(--bege);color:var(--cobre2)}
+.pill.feito{background:#E3F0E6;color:var(--ok)}
+.encontro{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px}
+.encontro summary{cursor:pointer;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;list-style:none}
+.encontro summary::-webkit-details-marker{display:none}
+.num{flex:none;width:32px;height:37px;display:flex;align-items:center;justify-content:center;background:var(--cobre);color:#fff;font-family:Montserrat,sans-serif;font-weight:700;font-size:13px}
+.leitura{white-space:pre-wrap;background:var(--bege);border-radius:12px;padding:12px 14px;font-size:14px}
+.centro{min-height:calc(100vh - 140px);display:flex;align-items:center;justify-content:center;padding:40px 20px}
+.login{width:100%;max-width:420px}
+.bio{background:var(--bege);border-top:1px solid var(--line)}
+.bio .wrap{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;padding-top:22px;padding-bottom:22px}
+.bio img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+footer{background:var(--ink);color:#B8ADA3;font-size:12px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;padding:12px 20px}
+footer a{color:#E9D9C8}
+.hoje{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:600px){.card{padding:16px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap topbar">
+<a class="logo" href="./" aria-label="Grupo Kovan"><img src="logo-kovan.png" alt="Grupo Kovan"></a>
+<div id="topo-acoes" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"></div>
+</div></header>
+
+<main id="app" aria-live="polite"><div class="centro"><p class="muted">Carregando…</p></div></main>
+
+<section class="bio" aria-label="Sua mentora"><div class="wrap">
+<div class="hex" style="flex:none;width:72px;height:83px;overflow:hidden;background:#3A3532"><img src="foto-pati.jpg" alt="Patrícia Abrão"></div>
+<div style="flex:1 1 0;min-width:240px">
+<p class="mont" style="margin:0;font-weight:700;font-size:15px">Patrícia Abrão</p>
+<p class="mont" style="margin:2px 0 0;font-weight:600;font-size:12px;color:var(--cobre)">Cristã, mãe, empresária, mentora, escritora e apaixonada por pessoas.</p>
+<p style="margin:6px 0 0;font-size:13px;color:var(--soft);text-align:justify">Há mais de 20 anos atuo com gestão e desenvolvimento de pessoas, acompanhando líderes, equipes e profissionais. Fundadora do Grupo Kovan, especialista em temperamentos e perfil comportamental.</p>
+</div>
+</div></section>
+<footer><div class="wrap"><span>Grupo Kovan · Área da mentorada</span><span><a href="https://wa.me/5541999349828">WhatsApp (41) 99934-9828</a> · <a href="mailto:patricia.abrao@grupokovan.com">patricia.abrao@grupokovan.com</a></span></div></footer>
+
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
