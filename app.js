@@ -265,7 +265,7 @@
     var t = today(), tom = add(t, 1), last = "__", nome = esc(primeiroNome());
     var h = '<div class="ci-card"><div class="ci-head"><h3>Ações diárias</h3></div>' +
       '<p class="ci-note">Escreva a ação de cada dia. A de hoje e a de amanhã ficam visíveis para ' + nome + ' assim que você salva. As dos dias seguintes ficam guardadas e aparecem para ela automaticamente na véspera.</p>';
-    for (var i = -3; i <= 13; i++) {
+    for (var i = 0; i <= 13; i++) {
       var d = add(t, i), th = themeFor(d), key = th ? th.id : "";
       if (key !== last) { last = key; h += '<div class="plan-week"><b>' + (th ? "Semana do encontro " + hexNum(th) : "Antes do primeiro encontro") + '</b>' + (th ? '<span>' + esc(th.titulo) + '</span>' : "") + '</div>'; }
       var saved = S.A[d] && S.A[d].texto ? S.A[d].texto : "";
